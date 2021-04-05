@@ -1,0 +1,6 @@
+/venv
+/.vscode
+.DS_Store
+
+config.ini
+vk_config.v2.json
