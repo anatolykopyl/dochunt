@@ -14,6 +14,8 @@ config.read('config.ini')
 terms = ast.literal_eval(config['SEARCH']['terms'])
 if config['SEARCH']['interests'] != "all":
     interests = ast.literal_eval(config['SEARCH']['interests'])
+else:
+    interests = "all"
 
 c = Console()
 c.print('[b]Dochunt[/b] starting...', style='yellow')
@@ -29,8 +31,7 @@ for i in range(len(terms)):
 photos_processed = 0
 photos_saved = 0
 
-c.rule()
-c.print('Watching documents :eyes:')
+c.print('Watching documents :eyes:', style='italic')
 c.print(f'> Documents scanned {photos_processed}')
 c.print(f'> Documents saved {photos_saved}')
 while True:
