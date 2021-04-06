@@ -5,5 +5,9 @@ import requests
 
 def detect(url):
     response = requests.get(url)
-    img = Image.open(io.BytesIO(response.content))
+    try:
+        img = Image.open(io.BytesIO(response.content))
+    except OSError:
+        return ''
+
     return pytesseract.image_to_string(img, lang='rus', timeout=30).lower()
