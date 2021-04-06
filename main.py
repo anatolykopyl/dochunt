@@ -79,7 +79,7 @@ while True:
                                 photos_saved += 1
                                 save_photo(image_url)
 
-            sleep(1)
+            #sleep(1)
     
     except KeyboardInterrupt:
         c.print(' Goodbye!', style='blue')
