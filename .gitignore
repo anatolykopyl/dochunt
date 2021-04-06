@@ -1,6 +1,7 @@
 /venv
 /.vscode
 .DS_Store
+__pycache__
 
 config.ini
 vk_config.v2.json
