@@ -15,5 +15,6 @@ def _2fa_handler():
 def authenticate():
     vk_session = vk_api.VkApi(login=login, password=password, auth_handler=_2fa_handler)
     vk_session.auth()
+    c.print('Authentication success!', style='blue')
 
     return vk_session.get_api()
