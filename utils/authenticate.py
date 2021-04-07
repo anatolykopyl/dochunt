@@ -1,6 +1,7 @@
 import vk_api
 import configparser
 from rich.console import Console
+from rich.prompt import Prompt
 c = Console()
 
 config = configparser.ConfigParser()
@@ -9,7 +10,7 @@ login = config['CREDENTIALS']['login']
 password = config['CREDENTIALS']['password']
 
 def _2fa_handler():
-    code = c.input("Enter 2FA code: ", style="italic cyan")
+    code = Prompt.ask("Enter 2FA code")
     return code, True
 
 def authenticate():
